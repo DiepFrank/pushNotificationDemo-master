@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/txt_them"
+        android:id="@+id/textView6"
+        android:layout_gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/monhoc"
+            android:layout_marginLeft="48dp"
+            android:id="@+id/textView8"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"/>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/subject"
+            android:entries="@array/subject"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView8"
+            android:layout_marginLeft="90dp"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/giaovien"
+            android:id="@+id/textView2"
+            android:layout_marginLeft="46dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"/>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/teacher"
+            android:entries="@array/teacher"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView2"
+            android:layout_marginLeft="80dp"/>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/lop"
+            android:id="@+id/textView3"
+            android:layout_marginLeft="46dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"/>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/grade"
+            android:entries="@array/grade"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView3"
+            android:layout_marginLeft="140dp"/>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/giohoc"
+            android:id="@+id/textView4"
+            android:layout_marginLeft="42dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"/>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/start"
+            android:entries="@array/start"
+            android:layout_marginLeft="65dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView4"/>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/end"
+            android:entries="@array/end"
+            android:layout_alignBottom="@+id/start"
+            android:layout_alignLeft="@+id/start"
+            android:layout_marginLeft="104dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="66dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/ngay"
+            android:id="@+id/textView5"
+            android:layout_marginLeft="44dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"/>
+
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ca"
+            android:entries="@array/ca"
+            android:layout_marginLeft="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView5"/>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/day"
+            android:entries="@array/day"
+            android:layout_marginRight="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView5"
+            android:layout_marginLeft="100dp"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:weightSum="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/buoihoc"
+            android:id="@+id/textView9"
+            android:layout_marginLeft="44dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_weight="0.54"/>
+
+        <Spinner
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/stt"
+            android:entries="@array/stt"
+            />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/total"
+            android:entries="@array/total"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView"
+            android:layout_marginLeft="58dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Tổng số buổi học"
+        android:id="@+id/textView"/>
+
+    </RelativeLayout>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bt_them"
+        android:onClick="add_monhoc"
+        android:id="@+id/bt_add"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"/>
+
+</LinearLayout>

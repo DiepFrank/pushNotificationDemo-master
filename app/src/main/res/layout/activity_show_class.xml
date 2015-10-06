@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.iakremera.pushnotificationdemo.ShowClass"
+        android:orientation="vertical"
+        android:weightSum="1">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05">
+
+        <Spinner
+            android:layout_width="97dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_subject"
+            android:entries="@array/subject"
+            android:layout_gravity="right"
+            android:layout_marginLeft="100dp"/>
+
+        <Spinner
+            android:layout_width="91dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/grade"
+            android:id="@+id/search_grade"
+            android:layout_marginRight="100dp"/>
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_searchclass"
+        android:src="@drawable/ic_search"
+        android:onClick="search_class"
+        android:layout_gravity="center_horizontal"/>
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/listView"
+        android:layout_gravity="center_horizontal"
+        />
+
+</LinearLayout>

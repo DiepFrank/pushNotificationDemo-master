@@ -1,0 +1,140 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .idea\
+* .idea\.name
+* .idea\compiler.xml
+* .idea\copyright\
+* .idea\copyright\profiles_settings.xml
+* .idea\misc.xml
+* .idea\modules.xml
+* .idea\pushNotificationDemo-master.iml
+* .idea\vcs.xml
+* .idea\workspace.xml
+* README.md
+* ic_launcher-web.png
+* proguard-project.txt
+* pushNotificationDemo-master\
+* pushNotificationDemo-master\.classpath
+* pushNotificationDemo-master\.project
+* pushNotificationDemo-master\.settings\
+* pushNotificationDemo-master\.settings\org.eclipse.jdt.core.prefs
+* pushNotificationDemo-master\AndroidManifest.xml
+* pushNotificationDemo-master\README.md
+* pushNotificationDemo-master\bin\
+* pushNotificationDemo-master\bin\AndroidManifest.xml
+* pushNotificationDemo-master\bin\PushNotificationDemo.apk
+* pushNotificationDemo-master\bin\classes.dex
+* pushNotificationDemo-master\bin\classes\
+* pushNotificationDemo-master\bin\classes\com\
+* pushNotificationDemo-master\bin\classes\com\iakremera\
+* pushNotificationDemo-master\bin\classes\com\iakremera\pushnotificationdemo\
+* pushNotificationDemo-master\bin\classes\com\iakremera\pushnotificationdemo\BuildConfig.class
+* pushNotificationDemo-master\bin\classes\com\iakremera\pushnotificationdemo\MainActivity.class
+* pushNotificationDemo-master\bin\classes\com\iakremera\pushnotificationdemo\MyCustomReceiver.class
+* pushNotificationDemo-master\bin\classes\com\iakremera\pushnotificationdemo\R$attr.class
+* pushNotificationDemo-master\bin\classes\com\iakremera\pushnotificationdemo\R$drawable.class
+* pushNotificationDemo-master\bin\classes\com\iakremera\pushnotificationdemo\R$id.class
+* pushNotificationDemo-master\bin\classes\com\iakremera\pushnotificationdemo\R$layout.class
+* pushNotificationDemo-master\bin\classes\com\iakremera\pushnotificationdemo\R$menu.class
+* pushNotificationDemo-master\bin\classes\com\iakremera\pushnotificationdemo\R$string.class
+* pushNotificationDemo-master\bin\classes\com\iakremera\pushnotificationdemo\R$style.class
+* pushNotificationDemo-master\bin\classes\com\iakremera\pushnotificationdemo\R.class
+* pushNotificationDemo-master\bin\classes\com\iakremera\pushnotificationdemo\ShowPopUp.class
+* pushNotificationDemo-master\bin\dexedLibs\
+* pushNotificationDemo-master\bin\dexedLibs\Parse-1.2.3-bf6e5aea0c7edf2d2057e8c679a30382.jar
+* pushNotificationDemo-master\bin\dexedLibs\android-support-v4-20f0c326a0644d85f4412af5aca230a4.jar
+* pushNotificationDemo-master\bin\res\
+* pushNotificationDemo-master\bin\res\drawable-hdpi\
+* pushNotificationDemo-master\bin\res\drawable-hdpi\ic_launcher.png
+* pushNotificationDemo-master\bin\res\drawable-ldpi\
+* pushNotificationDemo-master\bin\res\drawable-ldpi\ic_launcher.png
+* pushNotificationDemo-master\bin\res\drawable-mdpi\
+* pushNotificationDemo-master\bin\res\drawable-mdpi\ic_launcher.png
+* pushNotificationDemo-master\bin\res\drawable-xhdpi\
+* pushNotificationDemo-master\bin\res\drawable-xhdpi\ic_launcher.png
+* pushNotificationDemo-master\bin\resources.ap_
+* pushNotificationDemo-master\gen\
+* pushNotificationDemo-master\gen\com\
+* pushNotificationDemo-master\gen\com\iakremera\
+* pushNotificationDemo-master\gen\com\iakremera\pushnotificationdemo\
+* pushNotificationDemo-master\gen\com\iakremera\pushnotificationdemo\BuildConfig.java
+* pushNotificationDemo-master\gen\com\iakremera\pushnotificationdemo\R.java
+* pushNotificationDemo-master\ic_launcher-web.png
+* pushNotificationDemo-master\libs\
+* pushNotificationDemo-master\libs\Parse-1.2.3.jar
+* pushNotificationDemo-master\libs\android-support-v4.jar
+* pushNotificationDemo-master\proguard-project.txt
+* pushNotificationDemo-master\project.properties
+* pushNotificationDemo-master\res\
+* pushNotificationDemo-master\res\drawable-hdpi\
+* pushNotificationDemo-master\res\drawable-hdpi\ic_launcher.png
+* pushNotificationDemo-master\res\drawable-ldpi\
+* pushNotificationDemo-master\res\drawable-ldpi\ic_launcher.png
+* pushNotificationDemo-master\res\drawable-mdpi\
+* pushNotificationDemo-master\res\drawable-mdpi\ic_launcher.png
+* pushNotificationDemo-master\res\drawable-xhdpi\
+* pushNotificationDemo-master\res\drawable-xhdpi\ic_launcher.png
+* pushNotificationDemo-master\res\layout\
+* pushNotificationDemo-master\res\layout\activity_main.xml
+* pushNotificationDemo-master\res\layout\popupdialog.xml
+* pushNotificationDemo-master\res\menu\
+* pushNotificationDemo-master\res\menu\activity_main.xml
+* pushNotificationDemo-master\res\values-v11\
+* pushNotificationDemo-master\res\values-v11\styles.xml
+* pushNotificationDemo-master\res\values-v14\
+* pushNotificationDemo-master\res\values-v14\styles.xml
+* pushNotificationDemo-master\res\values\
+* pushNotificationDemo-master\res\values\strings.xml
+* pushNotificationDemo-master\res\values\strings.xml~
+* pushNotificationDemo-master\res\values\styles.xml
+* pushNotificationDemo-master\src\
+* pushNotificationDemo-master\src\com\
+* pushNotificationDemo-master\src\com\iakremera\
+* pushNotificationDemo-master\src\com\iakremera\pushnotificationdemo\
+* pushNotificationDemo-master\src\com\iakremera\pushnotificationdemo\MainActivity.java
+* pushNotificationDemo-master\src\com\iakremera\pushnotificationdemo\MyCustomReceiver.java
+* pushNotificationDemo-master\src\com\iakremera\pushnotificationdemo\ShowPopUp.java
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:18.0.0
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* libs\Parse-1.2.3.jar => app\libs\Parse-1.2.3.jar
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
