@@ -1,14 +1,17 @@
 package com.iakremera.pushnotificationdemo;
 
+import java.util.Calendar;
 import java.util.Iterator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.DialogFragment;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -28,9 +31,20 @@ public class MyCustomReceiver extends BroadcastReceiver {
 			}
 			else
 			{
+                ThongbaoSQLiteOpenHelper helper = new ThongbaoSQLiteOpenHelper(context);
 				String action = intent.getAction();
 				if (action.equals("com.iakremera.pushnotificationdemo.UPDATE_STATUS"))
 				{
+                        Calendar c = Calendar.getInstance();
+                        String time = "";
+                        time = time + c.get(Calendar.HOUR_OF_DAY)
+                                + ":"
+                                + c.get(Calendar.MINUTE)
+                                +" at "
+                                + c.get(Calendar.DAY_OF_MONTH)
+                                + "/"
+                                + c.get(Calendar.MONTH) ;
+
 
 					String channel = intent.getExtras().getString("com.parse.Channel");
 					JSONObject json = new JSONObject(intent.getExtras().getString("com.parse.Data"));
@@ -40,11 +54,14 @@ public class MyCustomReceiver extends BroadcastReceiver {
 						String key = (String) itr.next();
 						if (key.equals("customdata"))
 						{
-//							Intent pupInt = new Intent(context, ShowPopUp.class);
-//							pupInt.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
-//							context.getApplicationContext().startActivity(pupInt);
-							Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
 
+                            Thongbao thongbao = new Thongbao(s,time);
+                            SQLiteDatabase db = helper.getReadableDatabase();
+                            if(db!=null) {
+                                helper.insert_tb(db, thongbao);
+                                Toast.makeText(context,"Received notification",Toast.LENGTH_LONG).show();
+                            }
+                            db.close();
 						}
 					}
 				}
@@ -54,4 +71,19 @@ public class MyCustomReceiver extends BroadcastReceiver {
 			Log.d(TAG, "JSONException: " + e.getMessage());
 		}
 	}
+    public void showTime(Context context)
+    {
+        Calendar c = Calendar.getInstance();
+        String time = "Send ";
+        time = time + c.get(Calendar.HOUR_OF_DAY)
+                + ":"
+                + c.get(Calendar.MINUTE)
+                +" at "
+                + c.get(Calendar.DAY_OF_MONTH)
+                + "/"
+                + c.get(Calendar.MONTH)
+        ;
+        Toast.makeText(context,time,Toast.LENGTH_LONG).show();
+
+    }
 }

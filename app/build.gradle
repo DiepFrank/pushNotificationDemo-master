@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.iakremera.pushnotificationdemo"
         minSdkVersion 15
-        targetSdkVersion 16
+        targetSdkVersion 23
     }
 
     buildTypes {
@@ -19,6 +19,6 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:18.0.0'
+    compile 'com.android.support:support-v4:+'
     compile files('libs/Parse-1.2.3.jar')
 }

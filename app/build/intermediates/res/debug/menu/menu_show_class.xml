@@ -1,9 +1,24 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:tools="http://schemas.android.com/tools"
-      tools:context="com.iakremera.pushnotificationdemo.ShowClass">
-    <item android:id="@+id/action_settings"
-          android:title="@string/action_settings"
-          android:orderInCategory="100"
-          android:showAsAction="never"/>
-</menu>
-<!-- From: file:/C:/Users/Diep_Chelsea/Downloads/pushNotificationDemo-master2/app/src/main/res/menu/menu_show_class.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/thongbao"
+        android:orderInCategory="80"
+        android:showAsAction="always"
+        android:title="@string/thongbao"/>
+    <item
+        android:id="@+id/showclass"
+        android:orderInCategory="80"
+        android:showAsAction="always"
+        android:title="@string/showclass"/>
+
+    <item
+        android:id="@+id/add"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/bt_them"/>
+    <item
+        android:id="@+id/info"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/info"/>
+</menu><!-- From: file:/C:/Users/Diep_Chelsea/Downloads/pushNotificationDemo-master2/app/src/main/res/menu/menu_show_class.xml -->

@@ -90,15 +90,25 @@
     <string name="app_name">PushNotificationDemo</string>
     <string name="bt_them"> Thêm lớp học</string>
     <string name="buoihoc">Buổi học</string>
-    <string name="giaovien">Giáo viên</string>
+    <string name="danhan">Các thông báo đã nhận</string>
+    <string name="giaovien">Giáo viên: </string>
     <string name="giohoc">Giờ học </string>
     <string name="hello_world">Hello world!</string>
+    <string name="info">Giới thiệu</string>
     <string name="lop">Lớp</string>
     <string name="menu_settings">Settings</string>
-    <string name="monhoc">Môn học</string>
+    <string name="monhoc">Môn học:</string>
     <string name="ngay">Thứ</string>
-    <string name="thongbao">Nhập thông báo</string>
+    <string name="noidungthongbao">Nội dung thông báo</string>
+    <string name="showclass">Xem lớp học</string>
+    <string name="ten_trungtam">Trung tâm luyện thi Đại học Tất Thành</string>
+    <string name="thongbao">Thông báo</string>
+    <string name="thongbao1">Nhập thông báo</string>
+    <string name="title_activity_demo">Demo</string>
+    <string name="title_activity_gioithieu">GioithieuActivity</string>
     <string name="title_activity_show_class">ShowClass</string>
+    <string name="title_activity_thongbao">ThongbaoActivity</string>
+    <string name="title_activity_thongtin_giaovien">ThongtinGiaovienActivity</string>
     <string name="txt_them">Thêm lớp học</string>
     <!-- From: file:/C:/Users/Diep_Chelsea/Downloads/pushNotificationDemo-master2/app/src/main/res/values/styles.xml -->
     <eat-comment/>
@@ -110,6 +120,7 @@
         -->
     </style>
     <style name="AppTheme" parent="AppBaseTheme">
+
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 </resources>

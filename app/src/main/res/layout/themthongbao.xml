@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="337dp"
         android:inputType="text"
-        android:hint="@string/thongbao"
+        android:hint="@string/thongbao1"
         android:ems="10"
         android:id="@+id/edt_thongbao"
         android:layout_centerHorizontal="true"
@@ -33,20 +33,4 @@
         android:layout_marginRight="62dp"
         android:layout_marginTop="65dp"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Move"
-        android:id="@+id/move"
-        android:layout_alignBottom="@+id/senPushB"
-        android:layout_alignParentLeft="true"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Move 2"
-        android:id="@+id/move2"
-        android:layout_alignTop="@+id/senPushB"
-        android:layout_centerHorizontal="true"/>
-
-</RelativeLayout><!-- From: file:/C:/Users/Diep_Chelsea/Downloads/pushNotificationDemo-master2/app/src/main/res/layout/activity_main.xml -->
+</RelativeLayout>

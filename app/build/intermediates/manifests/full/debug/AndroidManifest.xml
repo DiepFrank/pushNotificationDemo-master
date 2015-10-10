@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="15"
-        android:targetSdkVersion="16" />
+        android:targetSdkVersion="23" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -21,25 +21,18 @@
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
 
+    <!-- <android:uses-permission -->
+    <!-- android:name="android.permission.WRITE_EXTERNAL_STORAGE" -->
+    <!-- android:maxSdkVersion="18" /> -->
+    <!-- <android:uses-permission android:name="android.permission.READ_PHONE_STATE" /> -->
+    <!-- <android:uses-permission -->
+    <!-- android:name="android.permission.READ_EXTERNAL_STORAGE" -->
+    <!-- android:maxSdkVersion="18" /> -->
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
+        android:label="TB"
         android:theme="@style/AppTheme" >
-        <activity
-            android:name="com.iakremera.pushnotificationdemo.MainActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.iakremera.pushnotificationdemo.ThemLopHoc"
-            android:label="@string/app_name" >
-        </activity>
-
         <service android:name="com.parse.PushService" />
 
         <receiver android:name="com.parse.ParseBroadcastReceiver" >
@@ -59,9 +52,32 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name="com.iakremera.pushnotificationdemo.ThemThongBaoActivity" >
+        </activity>
+        <activity android:name="com.iakremera.pushnotificationdemo.ThongbaoActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.iakremera.pushnotificationdemo.ThemLopHoc" >
+        </activity>
         <activity
             android:name="com.iakremera.pushnotificationdemo.ShowClass"
             android:label="@string/title_activity_show_class" >
+        </activity>
+        <activity
+            android:name="com.iakremera.pushnotificationdemo.GioithieuActivity"
+            android:label="@string/title_activity_gioithieu" >
+        </activity>
+        <activity
+            android:name="com.iakremera.pushnotificationdemo.ThongtinGiaovienActivity"
+            android:label="@string/title_activity_thongtin_giaovien" >
+        </activity>
+        <activity
+            android:name="com.iakremera.pushnotificationdemo.Demo"
+            android:label="@string/title_activity_demo" >
         </activity>
     </application>
 

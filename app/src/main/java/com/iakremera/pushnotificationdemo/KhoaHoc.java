@@ -10,14 +10,20 @@ public class KhoaHoc {
     String end;
     String start;
     String day;
+    String total;
+    String stt;
+    String ca;
 
-    public KhoaHoc(String subject, String teacher, String grade, String start, String end, String day) {
+    public KhoaHoc(String subject, String teacher, String grade, String end, String day, String start, String total, String stt, String ca) {
         this.subject = subject;
         this.teacher = teacher;
         this.grade = grade;
         this.end = end;
-        this.start = start;
         this.day = day;
+        this.start = start;
+        this.total = total;
+        this.stt = stt;
+        this.ca = ca;
     }
 
     public void setSubject(String subject) {
@@ -32,15 +38,27 @@ public class KhoaHoc {
         this.grade = grade;
     }
 
-    public void setStart(String start) {
-        this.start = start;
-    }
-
     public void setEnd(String end) {
         this.end = end;
     }
 
     public void setDay(String day) {
         this.day = day;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
+    }
+
+    public void setStt(String stt) {
+        this.stt = stt;
+    }
+
+    public void setCa(String ca) {
+        this.ca = ca;
     }
 }

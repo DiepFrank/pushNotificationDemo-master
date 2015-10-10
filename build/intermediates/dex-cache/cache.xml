@@ -9,11 +9,25 @@
         <dex dex="C:\Users\Diep_Chelsea\Downloads\pushNotificationDemo-master2\app\build\intermediates\pre-dexed\debug\Parse-1.2.3-272c4c8400a240c5bb3f76a4c607d0c7e3c9acab.jar" />
     </item>
     <item
-        jar="C:\Users\Diep_Chelsea\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jar="C:\Users\Diep_Chelsea\Downloads\pushNotificationDemo-master2\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
-        <dex dex="C:\Users\Diep_Chelsea\Downloads\pushNotificationDemo-master2\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-49e0bd7e0874bf9977d3d5a63e75b1688601bc0d.jar" />
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="C:\Users\Diep_Chelsea\Downloads\pushNotificationDemo-master2\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-29f385e01b58d555e4547bcb311b982b68d071b7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Diep_Chelsea\Downloads\pushNotificationDemo-master2\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="C:\Users\Diep_Chelsea\Downloads\pushNotificationDemo-master2\app\build\intermediates\pre-dexed\debug\classes-08f9ffe0e19915c0c7951ed7a82b883b20a158fe.jar" />
+    </item>
+    <item
+        jar="D:\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="C:\Users\Diep_Chelsea\Downloads\pushNotificationDemo-master2\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-c03c280dd21af7abff05a00ee344f58262eaf55a.jar" />
     </item>
 
 </items>
