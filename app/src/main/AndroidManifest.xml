@@ -13,11 +13,10 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
-    <android:uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
 
@@ -54,10 +53,10 @@
 
         <activity android:name=".ThemThongBaoActivity" >
         </activity>
-        <activity android:name=".ThongbaoActivity" >
+        <activity android:name=".ThongbaoActivity"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -74,10 +73,6 @@
         <activity
             android:name=".ThongtinGiaovienActivity"
             android:label="@string/title_activity_thongtin_giaovien" >
-        </activity>
-        <activity
-            android:name=".Demo"
-            android:label="@string/title_activity_demo" >
         </activity>
     </application>
 

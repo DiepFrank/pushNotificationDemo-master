@@ -4,6 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -32,8 +34,7 @@ import java.util.Date;
 public class ThemThongBaoActivity extends Activity implements OnClickListener {
 	EditText edt_thongbao;
 	Button push,move,move2;
-    ProgressBar progressBar;
-    RelativeLayout layout;
+    ProgressDialog progressDialog;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -41,10 +42,10 @@ public class ThemThongBaoActivity extends Activity implements OnClickListener {
         getActionBar().setDisplayShowTitleEnabled(false);
         getActionBar().setDisplayUseLogoEnabled(false);
         getActionBar().setDisplayShowHomeEnabled(false);
-
         Parse.initialize(this, "c05IjgVFuvO7R4BvGt9qqxYCFSPPgSwjz8Wg7lQh", "pztLyjUrJB0CcljxjJ312YstBrHcSg7kC1ADmcQz");
 		PushService.setDefaultPushCallback(this, ThongbaoActivity.class);
 		edt_thongbao = (EditText) findViewById(R.id.edt_thongbao);
+        edt_thongbao.setText(null);
 		ParseInstallation.getCurrentInstallation().saveInBackground();
 		push = (Button)findViewById(R.id.senPushB);
 		push.setOnClickListener(this);
@@ -86,28 +87,25 @@ public class ThemThongBaoActivity extends Activity implements OnClickListener {
 
         //noinspection SimplifiableIfStatement
         switch (id){
-            case R.id.info :
-            {
-                Intent intent = new Intent(ThemThongBaoActivity.this,GioithieuActivity.class);
-                startActivity(intent);
+            case R.id.info: {
+                Move move = new Move(this,GioithieuActivity.class);
+                move.execute();
                 break;
             }
-            case R.id.thongbao :
-            {
-                Intent intent = new Intent(ThemThongBaoActivity.this,ThongbaoActivity.class);
-                startActivity(intent);
+            case R.id.thongbao: {
+                Move move = new Move(this,ThongbaoActivity.class);
+                move.execute();
                 break;
             }
-            case R.id.showclass :
-            {
-                Intent intent = new Intent(ThemThongBaoActivity.this,ShowClass.class);
-                startActivity(intent);
+            case R.id.showclass: {
+                Move move = new Move(this,ShowClass.class);
+                move.execute();
                 break;
             }
-            case R.id.add :
+            case R.id.add:
             {
-                Intent intent = new Intent(ThemThongBaoActivity.this,ThemLopHoc.class);
-                startActivity(intent);
+                Move move = new Move(this,ThemLopHoc.class);
+                move.execute();
                 break;
             }
         }
@@ -124,43 +122,63 @@ public class ThemThongBaoActivity extends Activity implements OnClickListener {
             context=cxt;
         }
         @Override
+        protected void onPreExecute() {
+        progressDialog = new ProgressDialog(ThemThongBaoActivity.this);
+        progressDialog.setMessage("Processing....");
+        progressDialog.setTitle("Please waiting while The notification is sending to Server. It depends on your Internet connection")     ;
+            progressDialog.setCancelable(true);
+            progressDialog.setIndeterminate(true);
+            progressDialog.show();
+        }
+        @Override
 		protected String doInBackground(String... strings) {
             String s = edt_thongbao.getText().toString();
             Date date = new Date();
             JSONObject obj;
-            try {
-                obj =new JSONObject();
-                obj.put("alert",s);
-                obj.put("action","com.iakremera.pushnotificationdemo.UPDATE_STATUS");
-                obj.put("customdata","My string");
+            if (s == null) {
+            Toast.makeText(ThemThongBaoActivity.this,"Can't send because this is an empty notification",Toast.LENGTH_LONG).show();
+            return null;
 
-                ParsePush push = new ParsePush();
-                ParseQuery query = ParseInstallation.getQuery();
-
-
-                // Notification for Android users
-                query.whereEqualTo("deviceType", "android");
-                push.setQuery(query);
-                push.setData(obj);
-                push.sendInBackground();
-            } catch (JSONException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
             }
-			return s;
-		}
-	}
+            else {
+                try {
+                    obj = new JSONObject();
+                    obj.put("alert", s);
+                    obj.put("action", "com.iakremera.pushnotificationdemo.UPDATE_STATUS");
+                    obj.put("customdata", "My string");
+
+                    ParsePush push = new ParsePush();
+                    ParseQuery query = ParseInstallation.getQuery();
+
+
+                    // Notification for Android users
+                    query.whereEqualTo("deviceType", "android");
+                    push.setQuery(query);
+                    push.setData(obj);
+                    push.sendInBackground();
+                } catch (JSONException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+
+                return s;
+            }
+        }
+        @Override
+        protected void onPostExecute(String s) {
+            showTime(ThemThongBaoActivity.this);
+            edt_thongbao.setText(null);
+            if(progressDialog!=null)
+            {
+                progressDialog.dismiss();
+            }
+        }
+    }
 	@Override
 	public void onClick(View v) {
         if(isOnline()) {
             final SendNotification send = new SendNotification(ThemThongBaoActivity.this);
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    send.execute();
-                }
-            });
-            showTime(ThemThongBaoActivity.this);
+            send.execute();
         }
         else
         {

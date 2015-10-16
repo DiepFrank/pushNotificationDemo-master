@@ -1,58 +1,60 @@
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.iakremera.pushnotificationdemo.ShowClass"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context="com.iakremera.pushnotificationdemo.ShowClass"
               android:weightSum="1"
+              android:background="@drawable/rsz_wpp5_2"
               android:orientation="vertical">
 
     <LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="145dp"
-    android:orientation="vertical"
-    >
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
         <LinearLayout
             android:layout_width="wrap_content"
             android:orientation="horizontal"
             android:layout_height="wrap_content">
 
-    <Spinner
-            android:layout_width="85dp"
-            android:layout_height="wrap_content"
-            android:entries="@array/grade"
-            android:id="@+id/search_grade"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/bt_searchclass"
-            android:layout_toStartOf="@+id/bt_searchclass"
-            android:layout_marginLeft="70dp"/>
+            <Spinner
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:entries="@array/grade"
+                android:id="@+id/search_grade"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/bt_searchclass"
+                android:layout_toStartOf="@+id/bt_searchclass"
+                android:layout_marginLeft="70dp"/>
 
-    <Spinner
-            android:layout_width="85dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/search_subject"
-            android:entries="@array/subject"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/bt_searchclass"
-            android:layout_toEndOf="@+id/bt_searchclass"
-            android:layout_marginLeft="20dp"/>
+            <Spinner
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/search_subject"
+                android:entries="@array/subject"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/bt_searchclass"
+                android:layout_toEndOf="@+id/bt_searchclass"
+                android:layout_marginLeft="20dp"/>
 
-        <ImageButton
-             android:layout_width="50dp"
-             android:layout_height="50dp"
-             android:id="@+id/bt_searchclass"
-             android:layout_weight="1"
-             android:src="@drawable/sicon"
-             android:onClick="search_class"
-             android:layout_gravity="right"
-             android:layout_centerVertical="true"
-             android:layout_centerHorizontal="true"
-             android:layout_marginLeft="40dp"/>
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/bt_searchclass"
+                android:layout_weight="1"
+                android:src="@drawable/sicon"
+                android:onClick="search_class"
+                android:layout_gravity="right"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"/>
         </LinearLayout>
 
 
         <RelativeLayout
-    android:layout_width="fill_parent"
-    android:layout_height="60dp">
+            android:layout_width="fill_parent"
+            android:layout_height="37dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -74,15 +76,15 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:textSize="20dp"/>
-</RelativeLayout>
+        </RelativeLayout>
 
     </LinearLayout>
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-    <TableRow>
+        <TableRow>
 
-    </TableRow>
+        </TableRow>
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
@@ -131,6 +133,12 @@
                 android:textSize="20dp"
                 android:id="@+id/cahoc"
                 android:layout_column="23"/>
+            <Button
+                android:layout_width="100dp"
+                android:id="@+id/delete1"
+                android:layout_height="wrap_content"
+                android:text="Delete class"
+                android:layout_marginLeft="40dp"/>
         </TableRow>
         <TableRow>
             <TextView
@@ -162,7 +170,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="----------"
                 android:textSize="20dp"
                 android:id="@+id/start"
                 android:layout_column="23"/>
@@ -178,8 +185,9 @@
 
     <TableLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    <TableRow
+        android:layout_height="wrap_content"
+       >
+        <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -205,7 +213,8 @@
                 android:textSize="20dp"
                 android:id="@+id/txtstt1"
                 android:layout_column="21"
-                android:paddingLeft="30dp"/>
+                android:paddingLeft="30dp"
+                android:layout_span="2"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -213,7 +222,8 @@
                 android:text="-----"
                 android:textSize="20dp"
                 android:id="@+id/stt2"
-                android:layout_column="24"/>
+                android:layout_column="23"
+                android:layout_marginLeft="20dp"/>
         </TableRow>
 
         <TableRow>
@@ -227,12 +237,20 @@
                 android:paddingLeft="30dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="70dp"
                 android:layout_height="40dp"
                 android:text="-----"
                 android:textSize="20dp"
                 android:id="@+id/cahoc2"
-                android:layout_column="24"/>
+                android:layout_column="23"
+                android:layout_marginLeft="20dp"/>
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/delete2"
+                android:text="Delete class"
+                android:onClick="delete_class"
+                android:layout_marginLeft="20dp"/>
         </TableRow>
         <TableRow>
             <TextView
@@ -250,7 +268,8 @@
                 android:text="-----"
                 android:textSize="20dp"
                 android:id="@+id/ngayhoc2"
-                android:layout_column="24"/>
+                android:layout_column="23"
+                android:layout_marginLeft="20dp"/>
         </TableRow>
         <TableRow>
             <TextView
@@ -263,15 +282,14 @@
                 android:paddingLeft="30dp"/>
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:text="-----"
+                android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:id="@+id/start2"
-                android:layout_column="23"/>
+                android:layout_column="23"
+                android:layout_marginLeft="20dp"/>
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:text="-----"
+                android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:id="@+id/end2"
                 android:layout_column="24"/>

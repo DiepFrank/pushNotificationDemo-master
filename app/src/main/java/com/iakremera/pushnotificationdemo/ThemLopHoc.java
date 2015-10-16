@@ -3,14 +3,17 @@ package com.iakremera.pushnotificationdemo;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.database.DataSetObserver;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 import com.parse.Parse;
@@ -38,12 +41,68 @@ public class ThemLopHoc extends Activity {
         ca = (Spinner) findViewById(R.id.ca);
         subject = (Spinner) findViewById(R.id.subject);
         teacher = (Spinner) findViewById(R.id.teacher);
+
         grade = (Spinner) findViewById(R.id.grade);
         end = (Spinner) findViewById(R.id.end);
-        start = (Spinner) findViewById(R.id.start);
+        start = (Spinner) findViewById(R.id.start2);
         day = (Spinner) findViewById(R.id.day);
         add = (Button) findViewById(R.id.bt_add);
+        SpinnerAdapter adapter = new SpinnerAdapter() {
+            @Override
+            public View getDropDownView(int i, View view, ViewGroup viewGroup) {
+                return null;
+            }
 
+            @Override
+            public void registerDataSetObserver(DataSetObserver dataSetObserver) {
+
+            }
+
+            @Override
+            public void unregisterDataSetObserver(DataSetObserver dataSetObserver) {
+
+            }
+
+            @Override
+            public int getCount() {
+                return 0;
+            }
+
+            @Override
+            public Object getItem(int i) {
+                return null;
+            }
+
+            @Override
+            public long getItemId(int i) {
+                return 0;
+            }
+
+            @Override
+            public boolean hasStableIds() {
+                return false;
+            }
+
+            @Override
+            public View getView(int i, View view, ViewGroup viewGroup) {
+                return null;
+            }
+
+            @Override
+            public int getItemViewType(int i) {
+                return 0;
+            }
+
+            @Override
+            public int getViewTypeCount() {
+                return 0;
+            }
+
+            @Override
+            public boolean isEmpty() {
+                return false;
+            }
+        };
     }
     public boolean isOnline() {
         ConnectivityManager cm =
@@ -101,24 +160,24 @@ public class ThemLopHoc extends Activity {
         //noinspection SimplifiableIfStatement
         switch (id) {
             case R.id.info: {
-                Intent intent = new Intent(ThemLopHoc.this, GioithieuActivity.class);
-                startActivity(intent);
+                Move move = new Move(this,GioithieuActivity.class);
+                move.execute();
                 break;
             }
             case R.id.thongbao: {
-                Intent intent = new Intent(ThemLopHoc.this,ThongbaoActivity.class);
-                startActivity(intent);
+                Move move = new Move(this,ThongbaoActivity.class);
+                move.execute();
                 break;
             }
             case R.id.showclass: {
-                Intent intent = new Intent(ThemLopHoc.this, ShowClass.class);
-                startActivity(intent);
+                Move move = new Move(this,ShowClass.class);
+                move.execute();
                 break;
             }
             case R.id.add:
             {
-                Intent intent = new Intent(this, ThemLopHoc.class);
-                startActivity(intent);
+                Move move = new Move(this,ThemLopHoc.class);
+                move.execute();
                 break;
             }
         }

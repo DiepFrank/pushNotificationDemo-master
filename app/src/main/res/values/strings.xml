@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string name="coloa">THPT CỔ LOA</string>
+    <string name="dhcn">Đại học Công nghiệp HN</string>
     <string name="app_name">PushNotificationDemo</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="thongbao1">Nhập thông báo</string>
     <string name="giaovien">Giáo viên: </string>
     <string name="monhoc">Môn học:</string>
+    <string name="covan">Cô Lê Vân</string>
+    <string name="lh">Liên hệ : Cô Vân - 0167.904.0716</string>
+    <string name="ql">Mama Tổng quản</string>
+    <string name="dc">Số 32-Ngõ 3-Đường 2-Tàm Xá</string>
+    <string name="ntt">THPT Nguyễn Tất Thành</string>
     <string name="buoihoc">Buổi học</string>
-    <string name="ten_trungtam">Trung tâm luyện thi Đại học Tất Thành</string>
+    <string name="ten_trungtam">Trung tâm luyện thi Đại học</string>
+    <string name="tatthanh"> Thầy Tiến</string>
     <string name="lop">Lớp</string>
     <string name="giohoc">Giờ học </string>
     <string name="ngay" >Thứ</string>
+    <string name="tb">Thầy Tiến Bạc</string>
+    <string name="tn">Thầy Trường Nghiêm</string>
+    <string name="th">Thầy Toản Hóa</string>
+    <string name="rose">Cô Bích Hồng</string>
+    <string name="nh">Cô Nguyệt Hà</string>
+    <string name="han">Cô Nguyễn Hà</string>
+    <string name="toan">Toán</string>
+    <string name="ly">Vật Lý</string>
+    <string name="hoa">Hóa học</string>
+    <string name="sinh">Sinh học</string>
+    <string name="van">Ngữ Văn</string>
+    <string name="anh">English</string>
+    <string name="ko">Không tiết lộ</string>
     <string name="bt_them"> Thêm lớp học</string>
     <string name="danhan">Các thông báo đã nhận</string>
     <string name="noidungthongbao">Nội dung thông báo</string>

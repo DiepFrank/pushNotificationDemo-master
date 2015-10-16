@@ -12,22 +12,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
-import java.util.Date;
 
 
 public class ThongbaoActivity extends Activity {
     ListView listView;
-    Button add_tb;
-
+    Button add_tb,del;
+    Tb_Adapter adapter;
     ArrayList<Thongbao> arrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +32,7 @@ public class ThongbaoActivity extends Activity {
         setContentView(R.layout.activity_thongbao);
         arrayList = new ArrayList<Thongbao>();
         add_tb = (Button) findViewById(R.id.add_tb);
+        del = (Button) findViewById(R.id.delete);
         add_tb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,16 +48,16 @@ public class ThongbaoActivity extends Activity {
         ThongbaoSQLiteOpenHelper openHelper = new ThongbaoSQLiteOpenHelper(ThongbaoActivity.this);
         SQLiteDatabase db = openHelper.getReadableDatabase();
         if(db!=null) {
-            Cursor cursor = db.query("thongbao", new String[]{"id", "content","time"}, null, null, null, null, null);
-            cursor.moveToFirst();
-            while (!cursor.isAfterLast()) {
-                String s = cursor.getString(1);
-                String d = cursor.getString(2);
-                arrayList.add(new Thongbao(s, d));
-                cursor.moveToNext();
-            }
+                Cursor cursor = db.query("thongbao", new String[]{"id", "content","time"}, null, null, null, null, null);
+                cursor.moveToFirst();
+                while (!cursor.isAfterLast()) {
+                    String s = cursor.getString(1);
+                    String d = cursor.getString(2);
+                    arrayList.add(new Thongbao(s, d));
+                    cursor.moveToNext();
+                }
             Collections.reverse(arrayList);
-                Tb_Adapter adapter = new Tb_Adapter(this,R.layout.custom_tb,arrayList);
+            Tb_Adapter adapter = new Tb_Adapter(this,R.layout.custom_tb,arrayList);
 //            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList);
             listView.setAdapter(adapter);
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -80,9 +78,27 @@ public class ThongbaoActivity extends Activity {
                 }
             });
         }
+        else
+        {
+            arrayList.add(new Thongbao("Welcome","few second ago"));
+            adapter = new Tb_Adapter(this,R.layout.custom_tb,arrayList);
+            listView.setAdapter(adapter);
+        }
     }
-    public void showTime(Context context)
+    public void delete(View view)
     {
+        ThongbaoSQLiteOpenHelper helper = new ThongbaoSQLiteOpenHelper(this);
+        SQLiteDatabase db = helper.getReadableDatabase();
+        if(db != null)
+        {
+            db.delete("thongbao", null, null);
+            arrayList.clear();
+            Intent intent = new Intent(ThongbaoActivity.this,ThongbaoActivity.class);
+            startActivity(intent);
+
+        }
+    }
+    public void showTime(Context context) {
         Calendar c = Calendar.getInstance();
         String time = "Send ";
         time = time + c.get(Calendar.DAY_OF_MONTH)
@@ -113,19 +129,24 @@ public class ThongbaoActivity extends Activity {
         //noinspection SimplifiableIfStatement
         switch (id) {
             case R.id.info: {
-                Intent intent = new Intent(ThongbaoActivity.this, GioithieuActivity.class);
-                startActivity(intent);
+                Move move = new Move(this,GioithieuActivity.class);
+                move.execute();
+                break;
+            }
+            case R.id.thongbao: {
+                Move move = new Move(this,ThongbaoActivity.class);
+                move.execute();
                 break;
             }
             case R.id.showclass: {
-                Intent intent = new Intent(ThongbaoActivity.this, ShowClass.class);
-                startActivity(intent);
+                Move move = new Move(this,ShowClass.class);
+                move.execute();
                 break;
             }
             case R.id.add:
             {
-                Intent intent = new Intent(this, ThemLopHoc.class);
-                startActivity(intent);
+                Move move = new Move(this,ThemLopHoc.class);
+                move.execute();
                 break;
             }
         }

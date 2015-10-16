@@ -87,21 +87,39 @@
     <!-- From: file:/C:/Users/Diep_Chelsea/Downloads/pushNotificationDemo-master2/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_settings">Settings</string>
+    <string name="anh">English</string>
     <string name="app_name">PushNotificationDemo</string>
     <string name="bt_them"> Thêm lớp học</string>
     <string name="buoihoc">Buổi học</string>
+    <string name="coloa">THPT CỔ LOA</string>
+    <string name="covan">Cô Lê Vân</string>
     <string name="danhan">Các thông báo đã nhận</string>
+    <string name="dc">Số 32-Ngõ 3-Đường 2-Tàm Xá</string>
+    <string name="dhcn">Đại học Công nghiệp HN</string>
     <string name="giaovien">Giáo viên: </string>
     <string name="giohoc">Giờ học </string>
+    <string name="han">Cô Nguyễn Hà</string>
     <string name="hello_world">Hello world!</string>
+    <string name="hoa">Hóa học</string>
     <string name="info">Giới thiệu</string>
+    <string name="ko">Không tiết lộ</string>
+    <string name="lh">Liên hệ : Cô Vân - 0167.904.0716</string>
     <string name="lop">Lớp</string>
+    <string name="ly">Vật Lý</string>
     <string name="menu_settings">Settings</string>
     <string name="monhoc">Môn học:</string>
     <string name="ngay">Thứ</string>
+    <string name="nh">Cô Nguyệt Hà</string>
     <string name="noidungthongbao">Nội dung thông báo</string>
+    <string name="ntt">THPT Nguyễn Tất Thành</string>
+    <string name="ql">Mama Tổng quản</string>
+    <string name="rose">Cô Bích Hồng</string>
     <string name="showclass">Xem lớp học</string>
-    <string name="ten_trungtam">Trung tâm luyện thi Đại học Tất Thành</string>
+    <string name="sinh">Sinh học</string>
+    <string name="tatthanh"> Thầy Tiến</string>
+    <string name="tb">Thầy Tiến Bạc</string>
+    <string name="ten_trungtam">Trung tâm luyện thi Đại học</string>
+    <string name="th">Thầy Toản Hóa</string>
     <string name="thongbao">Thông báo</string>
     <string name="thongbao1">Nhập thông báo</string>
     <string name="title_activity_demo">Demo</string>
@@ -109,7 +127,10 @@
     <string name="title_activity_show_class">ShowClass</string>
     <string name="title_activity_thongbao">ThongbaoActivity</string>
     <string name="title_activity_thongtin_giaovien">ThongtinGiaovienActivity</string>
+    <string name="tn">Thầy Trường Nghiêm</string>
+    <string name="toan">Toán</string>
     <string name="txt_them">Thêm lớp học</string>
+    <string name="van">Ngữ Văn</string>
     <!-- From: file:/C:/Users/Diep_Chelsea/Downloads/pushNotificationDemo-master2/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">
