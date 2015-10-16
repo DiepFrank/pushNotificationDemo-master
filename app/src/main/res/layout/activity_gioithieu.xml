@@ -34,7 +34,7 @@
         android:text="@string/dc"
         android:id="@+id/textView14"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"/>
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,11 +54,11 @@
 
     <ListView
         android:layout_width="wrap_content"
-        android:layout_height="297dp"
+        android:layout_height="320dp"
         android:layout_weight="0.01"
         android:id="@+id/list_teacher"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>

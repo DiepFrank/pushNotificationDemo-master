@@ -4,13 +4,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -177,8 +180,34 @@ public class ThemThongBaoActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
         if(isOnline()) {
-            final SendNotification send = new SendNotification(ThemThongBaoActivity.this);
-            send.execute();
+            LayoutInflater layoutInflater = LayoutInflater.from(ThemThongBaoActivity.this);
+            View promptView = layoutInflater.inflate(R.layout.check_pass, null);
+            final AlertDialog.Builder builder = new AlertDialog.Builder(ThemThongBaoActivity.this);
+            builder.setView(promptView);
+            builder.setCancelable(true);
+            final EditText password = (EditText) promptView.findViewById(R.id.password);
+            builder.setNegativeButton("OK", new AlertDialog.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    final String pass = password.getText().toString();
+                    if(pass.equals("tientoannghiem123")) {
+                            final SendNotification sendNotification = new SendNotification(ThemThongBaoActivity.this);
+                            sendNotification.execute();
+                        }
+                    else {
+                            dialogInterface.cancel();
+                        }
+                }
+            });
+            builder.setPositiveButton("Cancel", new AlertDialog.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.cancel();
+                }
+            });
+            AlertDialog dialog = builder.create();
+            dialog.show();
+
         }
         else
         {
@@ -187,5 +216,5 @@ public class ThemThongBaoActivity extends Activity implements OnClickListener {
         }
 	}
 
-	
+
 }

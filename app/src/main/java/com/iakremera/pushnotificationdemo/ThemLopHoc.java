@@ -1,17 +1,21 @@
 package com.iakremera.pushnotificationdemo;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.DataSetObserver;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.Toast;
@@ -112,32 +116,58 @@ public class ThemLopHoc extends Activity {
     }
     public void add_monhoc(View view) {
         if (isOnline()) {
-            String monhoc, giaovien, lop, bd, kt, thu, cahoc, tong, sttca;
-            monhoc = subject.getSelectedItem().toString();
-            giaovien = teacher.getSelectedItem().toString();
-            lop = grade.getSelectedItem().toString();
-            bd = start.getSelectedItem().toString();
-            kt = end.getSelectedItem().toString();
-            thu = day.getSelectedItem().toString();
-            sttca = stt.getSelectedItem().toString();
-            tong = total.getSelectedItem().toString();
-            cahoc = ca.getSelectedItem().toString();
-            ParseObject data = new ParseObject("KhoaHoc");
-            data.put("subject", monhoc);
-            data.put("teacher", giaovien);
-            data.put("grade", lop);
-            data.put("end", kt);
-            data.put("start", bd);
-            data.put("day", thu);
-            data.put("ca", cahoc);
-            data.put("total", tong);
-            data.put("stt", sttca);
-            data.saveInBackground(new SaveCallback() {
+            LayoutInflater layoutInflater = LayoutInflater.from(ThemLopHoc.this);
+            View promptView = layoutInflater.inflate(R.layout.check_pass, null);
+            final AlertDialog.Builder builder = new AlertDialog.Builder(ThemLopHoc.this);
+            builder.setView(promptView);
+            builder.setCancelable(true);
+            final EditText password = (EditText) promptView.findViewById(R.id.password);
+            builder.setNegativeButton("OK", new AlertDialog.OnClickListener() {
                 @Override
-                public void done(ParseException e) {
-                    Toast.makeText(ThemLopHoc.this, "Done", Toast.LENGTH_SHORT).show();
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    final String pass = password.getText().toString();
+                    if(pass.equals("tientoannghiem123")) {
+                        String monhoc, giaovien, lop, bd, kt, thu, cahoc, tong, sttca;
+                        monhoc = subject.getSelectedItem().toString();
+                        giaovien = teacher.getSelectedItem().toString();
+                        lop = grade.getSelectedItem().toString();
+                        bd = start.getSelectedItem().toString();
+                        kt = end.getSelectedItem().toString();
+                        thu = day.getSelectedItem().toString();
+                        sttca = stt.getSelectedItem().toString();
+                        tong = total.getSelectedItem().toString();
+                        cahoc = ca.getSelectedItem().toString();
+                        ParseObject data = new ParseObject("KhoaHoc");
+                        data.put("subject", monhoc);
+                        data.put("teacher", giaovien);
+                        data.put("grade", lop);
+                        data.put("end", kt);
+                        data.put("start", bd);
+                        data.put("day", thu);
+                        data.put("ca", cahoc);
+                        data.put("total", tong);
+                        data.put("stt", sttca);
+                        data.saveInBackground(new SaveCallback() {
+                            @Override
+                            public void done(ParseException e) {
+                                Toast.makeText(ThemLopHoc.this, "Done", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                    else {
+                        dialogInterface.cancel();
+                    }
                 }
             });
+            builder.setPositiveButton("Cancel", new AlertDialog.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.cancel();
+                }
+            });
+            AlertDialog dialog = builder.create();
+            dialog.show();
+
         }
         else
         {
